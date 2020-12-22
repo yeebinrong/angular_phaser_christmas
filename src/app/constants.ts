@@ -1,0 +1,1 @@
+export const SCENE_CARD = 'card'
