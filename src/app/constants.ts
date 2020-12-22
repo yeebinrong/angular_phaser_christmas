@@ -1,3 +1,5 @@
+import { Inject, Injector } from "@angular/core"
+
 export const SCENE_CARD = 'card'
 export const IMG_BACKGROUND = 'background'
 export const IMG_BABY_JESUS = 'baby_jesus'
@@ -12,3 +14,7 @@ export const IMG_CHRISTMAS_LOGO = 'merry_christmas'
 export const IMG_BONFIRE = 'bonfire'
 export const ANIMS_BONFIRE='bonfire'
 export const AUDIO_AWAY_IN_A_MANGER = 'away_in_a_manger'
+
+export class Globals {
+    static injector: Injector = null
+}

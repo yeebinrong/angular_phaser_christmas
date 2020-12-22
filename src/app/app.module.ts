@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 
 import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -13,6 +13,7 @@ import { CardComponent } from './components/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GameService } from './game.service';
 import { MessageComponent } from './components/message.component';
+import { Globals } from './constants';
 
 @NgModule({
   declarations: [
@@ -34,4 +35,8 @@ import { MessageComponent } from './components/message.component';
   providers: [ GameService ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor (private injector: Injector) {
+    Globals.injector = injector
+  }
+}

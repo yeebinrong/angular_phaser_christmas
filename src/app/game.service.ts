@@ -5,7 +5,7 @@ import { CardScene } from './scenes/card.scene';
 
 @Injectable()
 export class GameService {
-
+  message = ''
   created = false
   game: Game
 

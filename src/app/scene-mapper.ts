@@ -47,6 +47,14 @@ export class ScreenMapper {
         return sprite
     }
 
+    placeTextAt(x, y, msg: string, opts: any = {}) {
+        const text = this.config.scene.add.text(0, 0, msg, {
+            fontFamily: 'Nerko One',
+            fontSize: '6em'
+        })
+        this.placeObjectAt(x, y, text)
+    }
+
     scaleObject(img, opts) {
         if ('scaleX' in opts) {
             img.scaleX = opts['scaleX']

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { GameService } from '../game.service';
 
 @Component({
@@ -8,9 +9,10 @@ import { GameService } from '../game.service';
 })
 export class CardComponent implements OnInit {
 
-  constructor(private gameSvc: GameService) { }
+  constructor(private gameSvc: GameService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.gameSvc.message = this.activatedRoute.snapshot.queryParams['message']
     this.gameSvc.createGame()
   }
 

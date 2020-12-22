@@ -1,1 +1,11 @@
-<p>message works!</p>
+<div fxFill fxLayoutAlign="center">
+    <div fxLayoutAlign="center">
+        <img src="assets/christmas.jpg">
+        <form [formGroup]=form class="absolute" fxLayout="column" (ngSubmit)="makeGreetings()">
+            <mat-form-field>
+                <input formControlName="message" matInput placeholder="Enter your message">
+            </mat-form-field>
+            <button type="submit" mat-raised-button>Submit</button>
+        </form>
+    </div>
+</div>

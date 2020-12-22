@@ -1,11 +1,18 @@
+import { coerceStringArray } from '@angular/cdk/coercion'
 import { Scene } from 'phaser'
-import { ANIMS_BONFIRE, AUDIO_AWAY_IN_A_MANGER, IMG_ANGEL_GABRIEL, IMG_ANGEL_GABRIEL_BW, IMG_BABY_JESUS, IMG_BACKGROUND, IMG_BONFIRE, IMG_CHRISTMAS_LOGO, IMG_DONKEY, IMG_JOSEPH, IMG_MARY, IMG_SHEPARDS, IMG_THREE_WISE_MEN, SCENE_CARD } from '../constants'
+import { ANIMS_BONFIRE, AUDIO_AWAY_IN_A_MANGER, Globals, IMG_ANGEL_GABRIEL, IMG_ANGEL_GABRIEL_BW, IMG_BABY_JESUS, IMG_BACKGROUND, IMG_BONFIRE, IMG_CHRISTMAS_LOGO, IMG_DONKEY, IMG_JOSEPH, IMG_MARY, IMG_SHEPARDS, IMG_THREE_WISE_MEN, SCENE_CARD } from '../constants'
+import { GameService } from '../game.service'
 import { ScreenMapper } from '../scene-mapper'
 
 export class CardScene extends Scene {
 
+    private gameSvc: GameService
+
     constructor() {
         super(SCENE_CARD)
+        // lookup game service
+        this.gameSvc = Globals.injector.get(GameService)
+        console.info("HELLO TEST ", this.gameSvc.message)
     }
 
     // load resources
@@ -81,6 +88,8 @@ export class CardScene extends Scene {
             loop: true
         })
         music.play(AUDIO_AWAY_IN_A_MANGER)
+
+        let message = mapper.placeTextAt(0, 8, this.gameSvc.message)
     }
 
     // game loop
