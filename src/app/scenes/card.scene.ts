@@ -1,4 +1,3 @@
-import { coerceStringArray } from '@angular/cdk/coercion'
 import { Scene } from 'phaser'
 import { ANIMS_BONFIRE, AUDIO_AWAY_IN_A_MANGER, Globals, IMG_ANGEL_GABRIEL, IMG_ANGEL_GABRIEL_BW, IMG_BABY_JESUS, IMG_BACKGROUND, IMG_BONFIRE, IMG_CHRISTMAS_LOGO, IMG_DONKEY, IMG_JOSEPH, IMG_MARY, IMG_SHEPARDS, IMG_THREE_WISE_MEN, SCENE_CARD } from '../constants'
 import { GameService } from '../game.service'
