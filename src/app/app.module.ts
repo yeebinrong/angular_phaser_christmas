@@ -11,12 +11,15 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main.component';
 import { CardComponent } from './components/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GameService } from './game.service';
+import { MessageComponent } from './components/message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    CardComponent
+    CardComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ GameService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

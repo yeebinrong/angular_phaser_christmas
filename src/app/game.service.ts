@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Game } from 'phaser'
+import { CardScene } from './scenes/card.scene';
 
 @Injectable()
 export class GameService {
@@ -18,8 +19,8 @@ export class GameService {
     this.game = new Game({
       width, height,
       type: Phaser.AUTO, // type of canvas to use
-      parent: 'card',
-      scene: [ ]
+      parent: 'card', // <div id="card"></div>
+      scene: [ CardScene ]
     })  
   }
 }
